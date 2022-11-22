@@ -63,16 +63,14 @@ class MyApp extends State<App> {
 //   print(code_shot_about);
 // }
 // """;
-  ScrollController scrollController = ScrollController();
-  @override
+   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
     final getHeight = mediaQuery.size.height;
     final getWidth = mediaQuery.size.width;
     return Scaffold(
       extendBody: true,
-      body: CodeWidget(
-        scrollController: scrollController,
+      body: CodeWidget( 
         title: "azkaoksoas",
         code: defaultCode,
         onInit: (BuildContext context, CodeWidget page, CodeWidgetState pageState) async {
@@ -89,7 +87,8 @@ class MyApp extends State<App> {
                 context: context,
                 index: i,
               );
-              await scrollController.animateTo(scrollController.position.maxScrollExtent, duration: Duration(milliseconds: 1), curve: Curves.ease);
+              
+              await pageState.scrollController.animateTo(pageState.scrollController.position.maxScrollExtent, duration: Duration(milliseconds: 1), curve: Curves.ease);
             }
           });
         },
@@ -104,17 +103,17 @@ class MyApp extends State<App> {
   }) async {
     count++;
     setState(fn);
-    try {
-      RenderRepaintBoundary boundary = context.findRenderObject() as RenderRepaintBoundary;
-      ui.Image image = await boundary.toImage(pixelRatio: 1.0);
-      ByteData? byteData = await image.toByteData(format: ui.ImageByteFormat.png);
-      Uint8List pngBytes = byteData!.buffer.asUint8List();
-      await File("./result/${index}.png").writeAsBytes(pngBytes);
-    } catch (e) {
-      if (kDebugMode) {
-        print(e);
-      }
-    }
+    // try {
+    //   RenderRepaintBoundary boundary = context.findRenderObject() as RenderRepaintBoundary;
+    //   ui.Image image = await boundary.toImage(pixelRatio: 1.0);
+    //   ByteData? byteData = await image.toByteData(format: ui.ImageByteFormat.png);
+    //   Uint8List pngBytes = byteData!.buffer.asUint8List();
+    //   await File("./result/${index}.png").writeAsBytes(pngBytes);
+    // } catch (e) {
+    //   if (kDebugMode) {
+    //     print(e);
+    //   }
+    // }
   }
 }
 
@@ -122,14 +121,12 @@ class CodeWidget extends StatefulWidget {
   final void Function(BuildContext context, CodeWidget page, CodeWidgetState pageState) onInit;
 
   final String title;
-  final String code;
-  final ScrollController scrollController;
+  final String code; 
   const CodeWidget({
     super.key,
     required this.onInit,
     required this.title,
-    required this.code,
-    required this.scrollController,
+    required this.code, 
   });
 
   @override
@@ -141,6 +138,7 @@ class CodeWidgetState extends State<CodeWidget> {
     text: widget.code,
     language: dart,
   );
+  ScrollController scrollController = ScrollController();
   @override
   void initState() {
     super.initState();
@@ -271,7 +269,7 @@ class CodeWidgetState extends State<CodeWidget> {
                   },
                 ),
                 child: SingleChildScrollView(
-                  controller: widget.scrollController,
+                  controller: scrollController,
                   child: CodeField(
                     background: Colors.transparent,
                     controller: codeController,
