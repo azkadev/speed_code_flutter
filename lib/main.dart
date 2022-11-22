@@ -49,46 +49,50 @@ class MyApp extends State<App> {
   }
 
   late int count = 0;
-  String defaultCode = """
-void main() {
-  String code_shot_about = \"\"\"
-  Azkadev Creator Code Shot Flutter
+  String defaultCode = File("/home/hexaminate/Documents/HEXAMINATE/app/speed_code_flutter/lib/main.dart").readAsStringSync();
+//   """
+// void main() {
+//   String code_shot_about = \"\"\"
+//   Azkadev Creator Code Shot Flutter
 
-  Github: github.com/azkadev
-  Youtube: youtube.com/@azkadev
-  Telegram: t.me/azkadev
+//   Github: github.com/azkadev
+//   Youtube: youtube.com/@azkadev
+//   Telegram: t.me/azkadev
 
-  \"\"\";
-  print(code_shot_about);
-}
-""";
-
+//   \"\"\";
+//   print(code_shot_about);
+// }
+// """;
+  ScrollController scrollController = ScrollController();
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
     final getHeight = mediaQuery.size.height;
     final getWidth = mediaQuery.size.width;
-    print("update");
     return Scaffold(
       extendBody: true,
-      body: SingleChildScrollView(
-        child: CodeWidget(
-          title: "azkaoksoas",
-          code: defaultCode,
-          onInit: (BuildContext context, CodeWidget page, CodeWidgetState pageState) async {
-            List<String> codes = page.code.characters.toList();
-            pageState.codeController.text = "";
+      body: CodeWidget(
+        scrollController: scrollController,
+        title: "azkaoksoas",
+        code: defaultCode,
+        onInit: (BuildContext context, CodeWidget page, CodeWidgetState pageState) async {
+          List<String> codes = page.code.characters.toList();
+          pageState.codeController.text = "";
+          Future(() async {
             for (var i = 0; i < codes.length; i++) {
               String code = codes[i];
+              await Future.delayed(Duration(milliseconds: 1));
               await updateState(
-                  fn: () {
-                    pageState.codeController.text += code;
-                  },
-                  context: context,
-                  index: i);
+                fn: () {
+                  pageState.codeController.text += code;
+                },
+                context: context,
+                index: i,
+              );
+              await scrollController.animateTo(scrollController.position.maxScrollExtent, duration: Duration(milliseconds: 100), curve: Curves.ease);
             }
-          },
-        ),
+          });
+        },
       ),
     );
   }
@@ -119,7 +123,14 @@ class CodeWidget extends StatefulWidget {
 
   final String title;
   final String code;
-  const CodeWidget({super.key, required this.onInit, required this.title, required this.code});
+  final ScrollController scrollController;
+  const CodeWidget({
+    super.key,
+    required this.onInit,
+    required this.title,
+    required this.code,
+    required this.scrollController,
+  });
 
   @override
   State<CodeWidget> createState() => CodeWidgetState();
@@ -144,15 +155,16 @@ class CodeWidgetState extends State<CodeWidget> {
     // ignore: unused_local_variable
     final getHeight = mediaQuery.size.height;
     final getWidth = mediaQuery.size.width;
-    print("code up");
     return RepaintBoundary(
       child: Container(
-        constraints: const BoxConstraints(
-          minHeight: 807,
-          minWidth: 1539,
-          maxHeight: double.maxFinite,
-          maxWidth: double.maxFinite,
-        ),
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        // constraints: const BoxConstraints(
+        //   minHeight: 807,
+        //   minWidth: 1539,
+        //   maxHeight: double.maxFinite,
+        //   maxWidth: double.maxFinite,
+        // ),
         margin: const EdgeInsets.all(10),
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(color: const Color.fromARGB(255, 27, 25, 38), borderRadius: BorderRadius.circular(10)),
@@ -258,9 +270,13 @@ class CodeWidgetState extends State<CodeWidget> {
                     'deletion': TextStyle(color: Color(0xffef535090), fontStyle: FontStyle.normal),
                   },
                 ),
-                child: CodeField(
-                  background: Colors.transparent,
-                  controller: codeController,
+                child: SingleChildScrollView(
+                  controller: widget.scrollController,
+                  child: CodeField(
+                    background: Colors.transparent,
+                    controller: codeController,
+                    expands: false,
+                  ),
                 ),
               ),
             ),
