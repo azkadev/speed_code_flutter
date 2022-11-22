@@ -80,13 +80,12 @@ void main() {
             pageState.codeController.text = "";
             for (var i = 0; i < codes.length; i++) {
               String code = codes[i];
-              await Future.delayed(const Duration(milliseconds: 500));
               await updateState(
-                fn: () {
-                  pageState.codeController.text += code;
-                },
-                context: context,
-              );
+                  fn: () {
+                    pageState.codeController.text += code;
+                  },
+                  context: context,
+                  index: i);
             }
           },
         ),
@@ -97,26 +96,21 @@ void main() {
   Future<void> updateState({
     required VoidCallback fn,
     required BuildContext context,
+    required int index,
   }) async {
     count++;
     setState(fn);
     try {
       RenderRepaintBoundary boundary = context.findRenderObject() as RenderRepaintBoundary;
-      ui.Image image = await boundary.toImage(pixelRatio: 3.0);
+      ui.Image image = await boundary.toImage(pixelRatio: 1.0);
       ByteData? byteData = await image.toByteData(format: ui.ImageByteFormat.png);
       Uint8List pngBytes = byteData!.buffer.asUint8List();
-      await File("./result/${count}.png").writeAsBytes(pngBytes);
+      await File("./result/${index}.png").writeAsBytes(pngBytes);
     } catch (e) {
       if (kDebugMode) {
         print(e);
       }
     }
-  }
-
-  @override
-  void setState(VoidCallback fn) {
-    // TODO: implement setState
-    super.setState(fn);
   }
 }
 
