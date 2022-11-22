@@ -55,7 +55,7 @@ void main() {
   Azkadev Creator Code Shot Flutter
 
   Github: github.com/azkadev
-  Youtube: youtube.com/@b f[]azkadev
+  Youtube: youtube.com/@azkadev
   Telegram: t.me/azkadev
 
   \"\"\";
