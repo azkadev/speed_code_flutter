@@ -154,6 +154,8 @@ class CodeWidgetState extends State<CodeWidget> {
     return RepaintBoundary(
       child: Container(
         constraints: const BoxConstraints(
+          minHeight: 807,
+          minWidth: 1539,
           maxHeight: double.maxFinite,
           maxWidth: double.maxFinite,
         ),
