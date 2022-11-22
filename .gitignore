@@ -44,3 +44,6 @@ app.*.map.json
 /android/app/release
 
 railway/
+*.png
+*.mp4
+*.webm
