@@ -89,7 +89,7 @@ class MyApp extends State<App> {
                 context: context,
                 index: i,
               );
-              await scrollController.animateTo(scrollController.position.maxScrollExtent, duration: Duration(milliseconds: 100), curve: Curves.ease);
+              await scrollController.animateTo(scrollController.position.maxScrollExtent, duration: Duration(milliseconds: 1), curve: Curves.ease);
             }
           });
         },
