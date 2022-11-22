@@ -49,7 +49,7 @@ class MyApp extends State<App> {
   }
 
   late int count = 0;
-  String defaultCode = File("/home/hexaminate/Documents/HEXAMINATE/app/speed_code_flutter/lib/main.dart").readAsStringSync();
+  String defaultCode = File("./lib/main.dart").readAsStringSync();
 //   """
 // void main() {
 //   String code_shot_about = \"\"\"
