@@ -1,16 +1,15 @@
 // ignore_for_file: unused_local_variable, duplicate_ignore, use_full_hex_values_for_flutter_colors, depend_on_referenced_packages
 
 import 'dart:io';
-import 'package:alfred/alfred.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 
 import 'dart:async';
-import 'package:flutter/rendering.dart';
-import 'dart:ui' as ui;
 
 import 'package:flutter_code_editor/flutter_code_editor.dart';
 import 'package:highlight/languages/dart.dart';
+import 'package:path/path.dart' as p;
+import 'package:record_widget/record_widget.dart';
 
 void main() {
   runApp(
@@ -43,9 +42,20 @@ class ClientData {
 }
 
 class MyApp extends State<App> {
+  ScreenRecorderController controller = ScreenRecorderController(
+    pixelRatio: 1.0,
+    directory_folder_render: Directory(
+      p.join(Directory.current.path, "result"),
+    ),
+  );
+
   @override
   void initState() {
     super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      controller.start();
+    });
   }
 
   late int count = 0;
@@ -63,23 +73,26 @@ class MyApp extends State<App> {
 //   print(code_shot_about);
 // }
 // """;
-   @override
+  @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
     final getHeight = mediaQuery.size.height;
     final getWidth = mediaQuery.size.width;
     return Scaffold(
       extendBody: true,
-      body: CodeWidget( 
-        title: "azkaoksoas",
-        code: defaultCode,
-        onInit: (BuildContext context, CodeWidget page, CodeWidgetState pageState) async {
-          List<String> codes = page.code.characters.toList();
-          pageState.codeController.text = "";
-          Future(() async {
+      body: ScreenRecorder(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        controller: controller,
+        child: CodeWidget(
+          title: "azkaoksoas",
+          code: defaultCode,
+          onInit: (BuildContext context, CodeWidget page, CodeWidgetState pageState) async {
+            List<String> codes = page.code.characters.toList();
+            pageState.codeController.text = "";
             for (var i = 0; i < codes.length; i++) {
               String code = codes[i];
-              await Future.delayed(Duration(milliseconds: 1));
+              await Future.delayed(Duration(microseconds: 1));
               await updateState(
                 fn: () {
                   pageState.codeController.text += code;
@@ -87,11 +100,11 @@ class MyApp extends State<App> {
                 context: context,
                 index: i,
               );
-              
+
               await pageState.scrollController.animateTo(pageState.scrollController.position.maxScrollExtent, duration: Duration(milliseconds: 1), curve: Curves.ease);
             }
-          });
-        },
+          },
+        ),
       ),
     );
   }
@@ -121,12 +134,12 @@ class CodeWidget extends StatefulWidget {
   final void Function(BuildContext context, CodeWidget page, CodeWidgetState pageState) onInit;
 
   final String title;
-  final String code; 
+  final String code;
   const CodeWidget({
     super.key,
     required this.onInit,
     required this.title,
-    required this.code, 
+    required this.code,
   });
 
   @override
@@ -143,7 +156,7 @@ class CodeWidgetState extends State<CodeWidget> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((Duration duration) async {
-      widget.onInit.call(context, widget, this);
+      widget.onInit(context, widget,  this);
     });
   }
 

@@ -39,6 +39,8 @@ dependencies:
   alfred: ^0.1.7
   http: ^0.13.5
   flutter_code_editor: ^0.1.8
+  record_widget: ^0.0.1
+  path: ^1.8.3
 
 dev_dependencies:
   flutter_test:
