@@ -1,79 +1,42 @@
-# Speed Code Flutter
+IyBTcGVlZCBDb2RlIEZsdXR0ZXIKClNwZWVkIENvZGUgRmx1dHRlciwgZXhw
+ZXJpbWVudCBtYWtlIHZpZGVvIHdpdGggZmx1dHRlcgogCgpodHRwczovL3Vz
+ZXItaW1hZ2VzLmdpdGh1YnVzZXJjb250ZW50LmNvbS84MjUxMzUwMi8yMDMz
+NTg5MzUtZTg1MDFhNWEtZDQ1OC00MDBkLWE4Y2EtYmIzOTZkOTc3M2UzLm1w
+NAoKQ29udG9oIFZpZGVvIHlhbmcgZGkgYnVhdCBkYXJpIHNvdXJjZSBjb2Rl
+IGluaQoxLiBodHRwczovL3d3dy55b3V0dWJlLmNvbS93YXRjaD92PW5DOVN6
+Qms1cmRNCgotLS0KPHAgYWxpZ249ImNlbnRlciI+CiAgICA8YSBocmVmPSJo
+dHRwczovL2dpdGh1Yi5jb20vYXprYWRldiI+CiAgICAgICAgPGltZyBzcmM9
+Imh0dHBzOi8vdGVsZWdyYS5waC9maWxlL2U5MGJkZWFiODM5MGI4YzBkOWRm
+Mi5wbmciIGFsdD0iU3BlY3RhIgogICAgICAgICAgICB3aWR0aD0iMzEyIgog
+ICAgICAgICAgICBoZWlnaHQ9IjMxMiI+CiAgICA8L2E+CiAgICA8YnI+CiAg
+ICA8YSBocmVmPSJodHRwczovL3lvdXR1YmUuY29tL2MvZ2FsYXhldXMiPgog
+ICAgICAgIDxpbWcKICAgICAgICAgICAgc3JjPSJodHRwczovL3Jhdy5naXRo
+dWJ1c2VyY29udGVudC5jb20vYXprYWRldi9hemthZGV2L21haW4vYXNzZXRz
+L2ltYWdlcy9wb3dlcmVkX2dhbGF4ZXVzLnBuZyIKICAgICAgICAgICAgYWx0
+PSJnYWxheGV1cyIKICAgICAgICAgICAgd2lkdGg9IjM1MCIKICAgICAgICAg
+ICAgaGVpZ2h0PSI4MCIKICAgICAgICA+CiAgICA8L2E+CiAgICA8YnI+CiAg
+ICA8Yj5BdXRob3IgQXprYWRldiDwn5SlPC9iPgogICAgPGJyPgo8L3A+CiAK
+IyMjIEFib3V0IHRoaXMKClJlcG8gaW5pIGhhbnlhIHByb2plY3QgYmlhc2Es
+IGRhbiBoYW55YSBzZWJ1YWggdGVzdGluZyBrYWxhdSBmbHV0dGVyIGdhayBj
+dW1hIGJpa2luIGFwcCB0YXBpIGJpa2luIHZpZGVvIGFwYXB1biB0ZXJnYW50
+dW5nIHBpbG90CgojIyMgU3VwcG9ydAo+IFRvbG9uZyBiZXJpIHNheWEgZHVr
+dW5nYW4gZGVuZ2FuIGNhcmEgZm9sbG93IHVwIHNlbXVhIHNvY2lhbCBtZWRp
+YSBzYXlhIC8gZG9uYXRlIGRpIGdpdGh1YiB5YQoKIyMjIFNvY2lhbCBNZWRp
+YSBNZQoKMS4gW1lvdXR1YmVdKGh0dHBzOi8veW91dHViZS5jb20vQGF6a2Fk
+ZXYpCjIuIFtUZWxlZ3JhbV0oaHR0cHM6Ly90Lm1lL2F6a2FkZXYpCgotLS0K
+CiMjIyBEZXZlbG9wbWVudAoKMS4gQ2xvbmUgc291cmNlIGNvZGUgCgogICAg
+YGBgYmFzaAogICAgZ2l0IGNsb25lIGh0dHBzOi8vZ2l0aHViLmNvbS9hemth
+ZGV2L3NwZWVkX2NvZGVfZmx1dHRlci5naXQKICAgIGNkIHNwZWVkX2NvZGVf
+Zmx1dHRlcgogICAgYGBgCgoyLiBEb3dubG9hZCBwYWNrYWdlCgogICAgYGBg
+YmFzaAogICAgZmx1dHRlciBwdWIgZ2V0CiAgICBgYGAKCjMuIFJ1bm5pbmcK
+CiAgICBgYGBiYXNoCiAgICBmbHV0dGVyIHJ1bgogICAgYGBgIAoKIyMjIFJl
+bmRlcgoKYGBgYmFzaApmZm1wZWcgLWYgaW1hZ2UyIC1pIC4vcmVzdWx0LyUw
+MWQucG5nIG91dHB1dC5tcDQKYGBgCgo8IS0tIGBgYGJhc2gKZmZtcGVnIC1p
+IC4vcmVzdWx0LyVkLnBuZyAtYzp2IGxpYngyNjQgLXIgNjAgLi9zY3JlZW5z
+aG90L3Jlc3VsdC5tcDQKYGBgCgpgYGBiYXNoCmZmbXBlZyAtaSAuL3Jlc3Vs
+dC8lZC5wbmcgLXBpeF9mbXQgeXV2YTQyMHAgLWZpbHRlcjp2IGZwcz02MCAu
+L3NjcmVlbnNob3QvcmVzdWx0LndlYm0KYGBgIC0tPgo=
 
-Speed Code Flutter, experiment make video with flutter
- 
-
-https://user-images.githubusercontent.com/82513502/203358935-e8501a5a-d458-400d-a8ca-bb396d9773e3.mp4
-
-Contoh Video yang di buat dari source code ini
-1. https://www.youtube.com/watch?v=nC9SzBk5rdM
-
----
-<p align="center">
-    <a href="https://github.com/azkadev">
-        <img src="https://telegra.ph/file/e90bdeab8390b8c0d9df2.png" alt="Specta"
-            width="312"
-            height="312">
-    </a>
-    <br>
-    <a href="https://youtube.com/c/galaxeus">
-        <img
-            src="https://raw.githubusercontent.com/azkadev/azkadev/main/assets/images/powered_galaxeus.png"
-            alt="galaxeus"
-            width="350"
-            height="80"
-        >
-    </a>
-    <br>
-    <b>Author Azkadev 🔥</b>
-    <br>
-</p>
- 
-### About this
-
-Repo ini hanya project biasa, dan hanya sebuah testing kalau flutter gak cuma bikin app tapi bikin video apapun tergantung pilot
-
-### Support
-> Tolong beri saya dukungan dengan cara follow up semua social media saya / donate di github ya
-
-### Social Media Me
-
-1. [Youtube](https://youtube.com/@azkadev)
-2. [Telegram](https://t.me/azkadev)
-
----
-
-### Development
-
-1. Clone source code 
-
-    ```bash
-    git clone https://github.com/azkadev/speed_code_flutter.git
-    cd speed_code_flutter
-    ```
-
-2. Download package
-
-    ```bash
-    flutter pub get
-    ```
-
-3. Running
-
-    ```bash
-    flutter run
-    ``` 
-
-### Render
-
-```bash
-ffmpeg -f image2 -i ./result/%01d.png output.mp4
-```
-
-<!-- ```bash
-ffmpeg -i ./result/%d.png -c:v libx264 -r 60 ./screenshot/result.mp4
-```
-
-```bash
-ffmpeg -i ./result/%d.png -pix_fmt yuva420p -filter:v fps=60 ./screenshot/result.webm
-``` -->
+<!-- START GLOBAL CORPORATION -->
+404: Not Found
+<!-- END GLOBAL CORPORATION -->
